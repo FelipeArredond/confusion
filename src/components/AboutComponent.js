@@ -2,6 +2,8 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import RenderLeader from './RenderLeaderComponent';
+import { FadeTransform } from 'react-animation-components';
+
 
 function About(props) {
 
@@ -62,7 +64,12 @@ function About(props) {
                     </div>
                     <div className="col-12">
                         <Media list>
-                            <RenderLeader leaders={props.leaders}/> 
+                        <FadeTransform in 
+                                transformProps={{
+                                    exitTransform: 'scale(0.5) translateY(-50%)'
+                                }}>
+                            <RenderLeader leaders={props.leaders}/>
+                        </FadeTransform>        
                         </Media>
                     </div>
                 </div>
